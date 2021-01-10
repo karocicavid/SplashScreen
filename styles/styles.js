@@ -8,6 +8,14 @@ export const styles = StyleSheet.create({
         alignItems:'center',
         justifyContent:'flex-start'
     },
+    imageSecond:{
+        flex:1,
+        width:'100%',
+        height:900,
+        resizeMode:'contain',
+        alignItems:'center',
+        justifyContent:'center'
+    },
     entertaimentImage:{
         width:120,
         height:120,
@@ -27,7 +35,18 @@ export const styles = StyleSheet.create({
         fontWeight:'900',
         fontStyle:"italic"
     },
+    loadingText:{
+        fontSize:32,
+        fontStyle:"italic"
+    },
     entertaimentView:{
         marginBottom:400,
     },
+    loadingView:{
+        justifyContent:'center',
+        alignItems:'center'
+    },
+    animationView:{
+        flexDirection:'row',
+    }
 });
