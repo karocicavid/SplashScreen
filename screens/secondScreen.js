@@ -22,26 +22,24 @@ export  class SecondScreen extends Component {
     
     animate(){
         loadingArr.forEach((value) => {
-            this.loadingValue[value].setValue(0);
+            this.loadingValue[value].setValue(0)
         })
        const animations = loadingArr.map((value)=>{
            return (Animated.timing(
                this.loadingValue[value],{
                    toValue:1,
-                   duration:1500,
+                   duration:600,
                    useNativeDriver:true
                }
            ))
        })
-       console.log(animations)
        Animated.sequence(animations).start(()=>this.animate())
     }
     render() {
         const animations = loadingArr.map((a,i)=>{
-            return <Animated.View key={i} style={{opacity:this.loadingValue[a], height: 16, width: 16, backgroundColor: 'black',borderRadius:30, marginLeft: 3, marginTop: 3}}/>
+            return <Animated.View key={i} style={{opacity:this.loadingValue[a],...styles.animatedView}}/>
         })
-        return (
-            
+        return ( 
         <View style={styles.loadingView}>
             <View><Text style={styles.loadingText}>Loading</Text></View>
             <View style={styles.animationView}>

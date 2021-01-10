@@ -2,11 +2,6 @@ import React, { Component } from 'react'
 import { Animated, Easing} from 'react-native'
 import { Screen } from "./loadingScreen";
 
-const loadingArr = [];
-for(let i = 0; i < 4 ; i++ ){
-    loadingArr.push(i)
-}
-
 export  class MainScreen extends Component {
     constructor(){
         super()
@@ -16,10 +11,7 @@ export  class MainScreen extends Component {
         this.secondScreen=this.secondScreen.bind(this);
         this.animatedValue= new Animated.Value(0);
         this.animatedValue2= new Animated.Value(0);
-        this.loadingValue = [];
-        loadingArr.forEach((value)=>{
-            this.loadingValue[value]=new Animated.Value(0);
-        })
+
     }
     componentDidMount(){
         this.animate();
@@ -30,8 +22,6 @@ export  class MainScreen extends Component {
         })
     }
     animate(){
-        this.animatedValue.setValue(0);
-        this.animatedValue2.setValue(0);
         const createAnim = function(value,duration,easing,delay=0){
         return Animated.timing(
             value,{
@@ -42,9 +32,9 @@ export  class MainScreen extends Component {
                 useNativeDriver:true
             }
         )}
-        Animated.parallel([
+        Animated.sequence([
             createAnim(this.animatedValue,5000,Easing.ease),
-            createAnim(this.animatedValue2,9000,Easing.ease),
+            createAnim(this.animatedValue2,2000,Easing.ease),
         ]).start()
     }
     render() {

@@ -32,21 +32,27 @@ export const styles = StyleSheet.create({
         paddingBottom:10,
         paddingLeft:20,
         paddingRight:20,
-        fontWeight:'900',
-        fontStyle:"italic"
+        fontWeight:'900'
     },
     loadingText:{
         fontSize:32,
-        fontStyle:"italic"
     },
     entertaimentView:{
         marginBottom:400,
     },
     loadingView:{
-        justifyContent:'center',
-        alignItems:'center'
+        alignItems:'center',
+        paddingBottom:90
     },
     animationView:{
         flexDirection:'row',
+    },
+    animatedView:{
+        height: 16, 
+        width: 16, 
+        backgroundColor: 'black',
+        borderRadius:30, 
+        marginLeft: 3, 
+        marginTop: 3
     }
 });
